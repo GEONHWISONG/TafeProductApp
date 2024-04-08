@@ -22,6 +22,7 @@ namespace ProductApps
     {
         Product cProduct;
         int cQuantity;
+        decimal cGST = 1.1m;
         
         public MainWindow()
         {
@@ -36,7 +37,8 @@ namespace ProductApps
                 cProduct.calTotalPayment();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 totalChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25);
-                totalChargewithWrap.Text = Convert.ToString(cProduct.TotalPayment + 25 + 5);
+                totalChargewithWrapTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25 + 5);
+                totalChargewithGSTTextBox.Text = Convert.ToString((cProduct.TotalPayment + 25 + 5) * cGST);
             }
             catch (FormatException)
             {
